@@ -3,12 +3,18 @@ import 'package:lipsum/lipsum.dart' as lipsum;
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   int questionIndex = 0;
 
   void answerQuestion() {
-    questionIndex++;
-    print(questionIndex);
+    setState(() {
+      questionIndex++;
+    });
   }
 
   @override

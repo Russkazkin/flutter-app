@@ -27,8 +27,14 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(questions[questionIndex]),
-            Row(children: [
+            Container(
+              padding: EdgeInsets.all(20.0),
+              child: Text(
+                questions[questionIndex],
+                style: TextStyle(fontSize: 20.0),
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
               RaisedButton(
                 onPressed: answerQuestion,
                 child: Text('Ответ 1'),

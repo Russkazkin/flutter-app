@@ -6,9 +6,32 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(
-      appBar: AppBar(title: Text('Мое первое приложение'),),
-      body: Text(lipsum.createWord(numWords: 4)),
-    ),);
+    List<String> questions = ['Твой любимый цвет?', 'Твой любимый питомец?'];
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Мое первое приложение'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Text('Вопрос!'),
+            Row(children: [
+              RaisedButton(
+                onPressed: null,
+                child: Text('Ответ 1'),
+              ),
+              RaisedButton(
+                onPressed: null,
+                child: Text('Ответ 2'),
+              ),
+              RaisedButton(
+                onPressed: null,
+                child: Text('Ответ 3'),
+              ),
+            ]),
+          ],
+        ),
+      ),
+    );
   }
 }

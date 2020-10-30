@@ -4,8 +4,11 @@ import 'package:lipsum/lipsum.dart' as lipsum;
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  int questionIndex = 0;
+
   void answerQuestion() {
-    print('Ответ принят!');
+    questionIndex++;
+    print(questionIndex);
   }
 
   @override
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            Text('Вопрос!'),
+            Text(questions[questionIndex]),
             Row(children: [
               RaisedButton(
                 onPressed: answerQuestion,

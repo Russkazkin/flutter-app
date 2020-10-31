@@ -9,11 +9,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int questionIndex = 0;
+  int _questionIndex = 0;
 
-  void answerQuestion() {
+  void _answerQuestion() {
     setState(() {
-      questionIndex++;
+      _questionIndex++;
     });
   }
 
@@ -30,21 +30,21 @@ class _MyAppState extends State<MyApp> {
             Container(
               padding: EdgeInsets.all(20.0),
               child: Text(
-                questions[questionIndex],
+                questions[_questionIndex],
                 style: TextStyle(fontSize: 20.0),
               ),
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
               RaisedButton(
-                onPressed: answerQuestion,
+                onPressed: _answerQuestion,
                 child: Text('Ответ 1'),
               ),
               RaisedButton(
-                onPressed: answerQuestion,
+                onPressed: _answerQuestion,
                 child: Text('Ответ 2'),
               ),
               RaisedButton(
-                onPressed: answerQuestion,
+                onPressed: _answerQuestion,
                 child: Text('Ответ 3'),
               ),
             ]),

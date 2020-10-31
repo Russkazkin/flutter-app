@@ -28,7 +28,9 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Question(questions[_questionIndex],),
+            Question(
+              questions[_questionIndex],
+            ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
               RaisedButton(
                 onPressed: _answerQuestion,

@@ -24,6 +24,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromRGBO(255, 111, 0, 1.0),
           title: Text('Мое первое приложение'),
         ),
         body: Column(

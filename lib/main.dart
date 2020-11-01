@@ -34,9 +34,9 @@ class _MyAppState extends State<MyApp> {
               questions[_questionIndex],
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              Answer(),
-              Answer(),
-              Answer(),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
             ]),
           ],
         ),

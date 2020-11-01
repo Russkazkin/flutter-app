@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/answer.dart';
 import 'package:flutter_app/question.dart';
 import 'package:lipsum/lipsum.dart' as lipsum;
 
@@ -33,18 +34,9 @@ class _MyAppState extends State<MyApp> {
               questions[_questionIndex],
             ),
             Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              RaisedButton(
-                onPressed: _answerQuestion,
-                child: Text('Ответ 1'),
-              ),
-              RaisedButton(
-                onPressed: _answerQuestion,
-                child: Text('Ответ 2'),
-              ),
-              RaisedButton(
-                onPressed: _answerQuestion,
-                child: Text('Ответ 3'),
-              ),
+              Answer(),
+              Answer(),
+              Answer(),
             ]),
           ],
         ),

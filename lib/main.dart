@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     List<Map> questions = [
       {
         'questionText': 'Твой любимый цвет?',
-        'answers': ['black', 'white', 'purple', 'red', 'green', 'blue', 'orange'],
+        'answers': ['black', 'white', 'purple', 'red'],
       },
       {
         'questionText': 'Твой любимый питомец?',
@@ -47,11 +47,9 @@ class _MyAppState extends State<MyApp> {
             Question(
               questions[_questionIndex]['questionText'],
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-            ]),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children:
+            (questions[_questionIndex]['answers'] as List<String>).map((answer) => Answer(_answerQuestion, answer)).toList(),
+            ),
           ],
         ),
       ),

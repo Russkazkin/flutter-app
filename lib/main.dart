@@ -41,16 +41,27 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Color.fromRGBO(255, 111, 0, 1.0),
           title: Text('Мое первое приложение'),
         ),
-        body: Column(
-          children: <Widget>[
-            Question(
-              questions[_questionIndex]['questionText'],
-            ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children:
-            (questions[_questionIndex]['answers'] as List<String>).map((answer) => Answer(_answerQuestion, answer)).toList(),
-            ),
-          ],
-        ),
+        body: (_questionIndex < questions.length)
+            ? Column(
+                children: <Widget>[
+                  Question(
+                    questions[_questionIndex]['questionText'],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children:
+                        (questions[_questionIndex]['answers'] as List<String>)
+                            .map((answer) => Answer(_answerQuestion, answer))
+                            .toList(),
+                  ),
+                ],
+              )
+            : Center(
+                child: Text(
+                  'You did it!',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
       ),
     );
   }

@@ -12,6 +12,20 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _questionIndex = 0;
+  final List<Map> questions = const [
+    {
+      'questionText': 'Твой любимый цвет?',
+      'answers': ['black', 'white', 'purple', 'red'],
+    },
+    {
+      'questionText': 'Твой любимый питомец?',
+      'answers': ['dog', 'cat', 'bird', 'bunny'],
+    },
+    {
+      'questionText': 'Твой любимый преподаватель?',
+      'answers': ['Max', 'Jura', 'Victor', 'Kati'],
+    },
+  ];
 
   void _answerQuestion() {
     setState(() {
@@ -21,21 +35,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // List<String> questions = ['Твой любимый цвет?', 'Твой любимый питомец?'];
-    const List<Map> questions = const [
-      {
-        'questionText': 'Твой любимый цвет?',
-        'answers': ['black', 'white', 'purple', 'red'],
-      },
-      {
-        'questionText': 'Твой любимый питомец?',
-        'answers': ['dog', 'cat', 'bird', 'bunny'],
-      },
-      {
-        'questionText': 'Твой любимый преподаватель?',
-        'answers': ['Max', 'Jura', 'Victor', 'Kati'],
-      },
-    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(

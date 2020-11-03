@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     // List<String> questions = ['Твой любимый цвет?', 'Твой любимый питомец?'];
-    List<Map> questions = [
+    const List<Map> questions = const [
       {
         'questionText': 'Твой любимый цвет?',
         'answers': ['black', 'white', 'purple', 'red'],

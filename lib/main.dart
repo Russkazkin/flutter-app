@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/answer.dart';
-import 'package:flutter_app/question.dart';
-import 'package:lipsum/lipsum.dart' as lipsum;
+import 'package:flutter_app/quiz.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -12,7 +11,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _questionIndex = 0;
-  final List<Map> questions = const [
+  final List<Map> _questions = const [
     {
       'questionText': 'Твой любимый цвет?',
       'answers': ['black', 'white', 'purple', 'red'],
@@ -41,21 +40,8 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Color.fromRGBO(255, 111, 0, 1.0),
           title: Text('Мое первое приложение'),
         ),
-        body: (_questionIndex < questions.length)
-            ? Column(
-                children: <Widget>[
-                  Question(
-                    questions[_questionIndex]['questionText'],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children:
-                        (questions[_questionIndex]['answers'] as List<String>)
-                            .map((answer) => Answer(_answerQuestion, answer))
-                            .toList(),
-                  ),
-                ],
-              )
+        body: (_questionIndex < _questions.length)
+            ? Quiz(answerQuestion: _answerQuestion, questionIndex: _questionIndex, questions: _questions,)
             : Center(
                 child: Text(
                   'You did it!',

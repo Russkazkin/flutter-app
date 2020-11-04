@@ -22,7 +22,7 @@ class Quiz extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: (questions[questionIndex]['answers'] as List<Map>)
-              .map((answer) => Answer(answerQuestion, answer['text']))
+              .map((answer) => Answer(() => answerQuestion(answer['score']), answer['text']))
               .toList(),
         ),
       ],

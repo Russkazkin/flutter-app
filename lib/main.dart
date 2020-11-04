@@ -11,6 +11,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _questionIndex = 0;
+  int _totalScore = 0;
   final List<Map> _questions = const [
     {
       'questionText': 'Твой любимый цвет?',
@@ -41,7 +42,10 @@ class _MyAppState extends State<MyApp> {
     },
   ];
 
-  void _answerQuestion() {
+  void _answerQuestion(int score) {
+
+    _totalScore += score;
+
     setState(() {
       _questionIndex++;
     });

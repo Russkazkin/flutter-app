@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/quiz.dart';
 import 'package:flutter_app/result.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -15,15 +14,30 @@ class _MyAppState extends State<MyApp> {
   final List<Map> _questions = const [
     {
       'questionText': 'Твой любимый цвет?',
-      'answers': ['black', 'white', 'purple', 'red'],
+      'answers': [
+        {'text': 'black', 'score': 10},
+        {'text': 'white', 'score': 5},
+        {'text': 'purple', 'score': 3},
+        {'text': 'red', 'score': 1}
+      ],
     },
     {
       'questionText': 'Твой любимый питомец?',
-      'answers': ['dog', 'cat', 'bird', 'bunny'],
+      'answers': [
+        {'text': 'dog', 'score': 10},
+        {'text': 'cat', 'score': 5},
+        {'text': 'bird', 'score': 3},
+        {'text': 'bunny', 'score': 1}
+      ],
     },
     {
       'questionText': 'Твой любимый преподаватель?',
-      'answers': ['Max', 'Jura', 'Victor', 'Kati'],
+      'answers': [
+        {'text': 'Max', 'score': 10},
+        {'text': 'Jura', 'score': 5},
+        {'text': 'Victor', 'score': 3},
+        {'text': 'Kati', 'score': 1}
+      ],
     },
   ];
 
@@ -42,7 +56,11 @@ class _MyAppState extends State<MyApp> {
           title: Text('Мое первое приложение'),
         ),
         body: (_questionIndex < _questions.length)
-            ? Quiz(answerQuestion: _answerQuestion, questionIndex: _questionIndex, questions: _questions,)
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions,
+              )
             : Result(),
       ),
     );

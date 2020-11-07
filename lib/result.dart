@@ -22,13 +22,21 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(
-        resultText,
-        style: TextStyle(
-          fontSize: 28.0,
-          fontWeight: FontWeight.bold,
-        ),
-        textAlign: TextAlign.center,
+      child: Column(
+        children: [
+          Text(
+            resultText,
+            style: TextStyle(
+              fontSize: 28.0,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          FlatButton(
+            child: Text('Restart Quiz'),
+            onPressed: null,
+          ),
+        ],
       ),
     );
   }

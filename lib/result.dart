@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
+  final Function resetQuiz;
 
-  Result(this.resultScore);
+  Result(this.resultScore, this.resetQuiz);
 
   String get resultText {
     var text;
@@ -34,7 +35,9 @@ class Result extends StatelessWidget {
           ),
           FlatButton(
             child: Text('Restart Quiz'),
-            onPressed: null,
+            onPressed: resetQuiz,
+            color: Colors.deepPurple,
+            textColor: Colors.white,
           ),
         ],
       ),
